@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Net Worth Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Net Worth Tracker</h1>
+        <form id="finance-form">
+            <label for="asset">Asset:</label>
+            <input type="text" id="asset" placeholder="e.g., Savings" required>
+            <label for="value">Value ($):</label>
+            <input type="number" id="value" placeholder="e.g., 10000" required>
+            <button type="submit">Add</button>
+        </form>
+        <div class="summary">
+            <h2>Total Net Worth: $<span id="net-worth">0</span></h2>
+            <ul id="asset-list"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
