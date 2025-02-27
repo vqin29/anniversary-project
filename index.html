@@ -21,6 +21,8 @@
         }
         .buttons {
             display: flex;
+            justify-content: center;
+            align-items: center;
             gap: 20px;
             margin-top: 20px;
         }
@@ -39,26 +41,49 @@
         .no {
             background-color: #d3d3d3;
             color: black;
-            position: absolute;
+        }
+        .back {
+            background-color: #87ceeb;
+            color: white;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <h1>Are you my lovey? ❤️</h1>
     <div class="buttons">
-        <button class="yes" onclick="showLove()">Yes</button>
-        <button class="no" onmouseover="moveButton()">No</button>
+        <button class="yes" onclick="showLoveStep1()">Yes</button>
+        <button class="no" onclick="showNoMessage()">No</button>
     </div>
     <script>
-        function showLove() {
-            document.body.innerHTML = '<h1>Yay! I love you! ❤️🥰</h1>';
+        function showLoveStep1() {
+            document.body.innerHTML = '<h1>Is this fun? Let\'s see what else I\'ve got coming 😏</h1>' +
+                '<div class="buttons">' +
+                '<button class="yes" onclick="showLoveStep2()">Yes</button>' +
+                '<button class="no" onclick="showBye()">No</button>' +
+                '</div>';
         }
-        function moveButton() {
-            const noButton = document.querySelector('.no');
-            const x = Math.random() * (window.innerWidth - 100);
-            const y = Math.random() * (window.innerHeight - 50);
-            noButton.style.left = `${x}px`;
-            noButton.style.top = `${y}px`;
+        function showLoveStep2() {
+            document.body.innerHTML = '<h1>Happy 3 years, goof! 🎉❤️</h1>' +
+                '<button class="yes" onclick="showMassageCoupon()">Next</button>';
+        }
+        function showMassageCoupon() {
+            document.body.innerHTML = '<h1>Here\'s a special gift for you! 🎁</h1>' +
+                '<img src="./coupon.png" alt="Massage Coupon" style="max-width: 100%; height: auto;">'
+        }
+        function showBye() {
+            document.body.innerHTML = '<h1>Bye! 😢</h1>';
+        }
+        function showNoMessage() {
+            document.body.innerHTML = '<h1>Oh no! 😢 Try again? 💕</h1>' +
+                '<button class="back" onclick="goBack()">Go Back</button>';
+        }
+        function goBack() {
+            document.body.innerHTML = '<h1>Are you my lovey? ❤️</h1>' +
+                '<div class="buttons">' +
+                '<button class="yes" onclick="showLoveStep1()">Yes</button>' +
+                '<button class="no" onclick="showNoMessage()">No</button>' +
+                '</div>';
         }
     </script>
 </body>
