@@ -47,6 +47,11 @@
             color: white;
             margin-top: 20px;
         }
+        .disclaimer {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #333;
+        }
     </style>
 </head>
 <body>
@@ -57,7 +62,7 @@
     </div>
     <script>
         function showLoveStep1() {
-            document.body.innerHTML = '<h1>Is this fun? Let\'s see what else I\'ve got coming 😏</h1>' +
+            document.body.innerHTML = '<h1>Is this fun? Keep going 😏</h1>' +
                 '<div class="buttons">' +
                 '<button class="yes" onclick="showLoveStep2()">Yes</button>' +
                 '<button class="no" onclick="showBye()">No</button>' +
@@ -65,11 +70,14 @@
         }
         function showLoveStep2() {
             document.body.innerHTML = '<h1>Happy 3 years, goof! 🎉❤️</h1>' +
-                '<button class="yes" onclick="showMassageCoupon()">Next</button>';
+                '<button class="yes" onclick="showMassageCoupon()">Next</button>' +
+                '<button class="back" onclick="showLoveStep1()">Go Back</button>';
         }
         function showMassageCoupon() {
             document.body.innerHTML = '<h1>Here\'s a special gift for you! 🎁</h1>' +
-                '<img src="./coupon.png" alt="Massage Coupon" style="max-width: 100%; height: auto;">'
+                '<img src="coupon.png" alt="Massage Coupon" style="max-width: 100%; height: auto;">' +
+                '<p class="disclaimer">*Disclaimer - the massage is for me 😜</p>' +
+                '<button class="back" onclick="showLoveStep2()">Go Back</button>';
         }
         function showBye() {
             document.body.innerHTML = '<h1>Bye! 😢</h1>';
